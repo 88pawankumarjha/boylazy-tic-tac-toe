@@ -53,7 +53,7 @@ class Board extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="board__box">
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -119,9 +119,9 @@ const history = this.state.history.slice(0, this.state.stepNumber + 1);
   render() {
 
     
-    let className = '';
+    let classNameCustom = '';
     if (this.state.hideHistoryDiv) {
-      className = 'hideHistoryDiv';
+      classNameCustom = 'hideHistoryDiv';
     }
 
     const history = this.state.history;
@@ -131,16 +131,16 @@ const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const moves = history.map((step, move) => {
       const desc = move ?
         'Go to move #' + move :
-        'Go to game start';
+        'RESET';
       return (
 
         
 
         <div key={move} 
-    className = {className}
+    className = {classNameCustom}
     >
-        <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        <li className="list" key={move}>
+          <button className="btn" onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
         </div>
       );
@@ -154,6 +154,9 @@ const history = this.state.history.slice(0, this.state.stepNumber + 1);
     }
     return (
       <div className="game">
+      <div className="game-info">
+        <div>{status}</div>
+        </div>
         <div className="game-board">
           <Board
             squares={current.squares}
@@ -161,7 +164,6 @@ const history = this.state.history.slice(0, this.state.stepNumber + 1);
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
           <ol>{moves}</ol>
         </div>
       </div>

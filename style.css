@@ -52,3 +52,39 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+
+
+/*
+* src/styles/board.css
+*/
+.game-info {
+  margin-top: 8px;
+  color: green;
+  /* margin-bottom: 8px; */
+  font: 700 18px / 1.618 sans-serif;
+  /* list-style-type: none; */
+}
+
+.list{
+    list-style-type: none; 
+}
+
+/*
+* src/styles/buttons.css
+*/
+/* Buttons */
+.btn {
+  padding: 5px 16px;
+  /* margin-top: 18px; */
+  font-size: 14px;
+  color: #fff;
+  background-color: #3498db;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color .25s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
